@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tony&#39;s Blog</title>
+  <title>python爬虫之xpath | Tony&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python爬虫之xpath
-XPath是一门语言
+  <meta name="description" content="XPath是一门语言
 XPath可以在xml文件中查找信息
 XPath支持HTML
 XPath通过元素和属性进行导行
@@ -16,13 +15,15 @@ XPath使用 要使用XPath就必须要在python中安装lxml库
 
 from lxml import etree
 selector =etree.HTML(网页源代码）
-selector.xpath(xpath">
+selector.xpath(xpath语法)
+
+简单语法
+// 从">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tony's Blog">
+<meta property="og:title" content="python爬虫之xpath">
 <meta property="og:url" content="https://zitongchen.github.io/2017/03/12/python爬虫之xpath/index.html">
 <meta property="og:site_name" content="Tony's Blog">
-<meta property="og:description" content="python爬虫之xpath
-XPath是一门语言
+<meta property="og:description" content="XPath是一门语言
 XPath可以在xml文件中查找信息
 XPath支持HTML
 XPath通过元素和属性进行导行
@@ -32,12 +33,14 @@ XPath使用 要使用XPath就必须要在python中安装lxml库
 
 from lxml import etree
 selector =etree.HTML(网页源代码）
-selector.xpath(xpath">
-<meta property="og:updated_time" content="2017-03-12T05:54:42.042Z">
+selector.xpath(xpath语法)
+
+简单语法
+// 从">
+<meta property="og:updated_time" content="2017-03-12T05:59:01.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tony's Blog">
-<meta name="twitter:description" content="python爬虫之xpath
-XPath是一门语言
+<meta name="twitter:title" content="python爬虫之xpath">
+<meta name="twitter:description" content="XPath是一门语言
 XPath可以在xml文件中查找信息
 XPath支持HTML
 XPath通过元素和属性进行导行
@@ -47,7 +50,10 @@ XPath使用 要使用XPath就必须要在python中安装lxml库
 
 from lxml import etree
 selector =etree.HTML(网页源代码）
-selector.xpath(xpath">
+selector.xpath(xpath语法)
+
+简单语法
+// 从">
   
     <link rel="alternate" href="/atom.xml" title="Tony&#39;s Blog" type="application/atom+xml">
   
@@ -85,9 +91,9 @@ selector.xpath(xpath">
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zitongchen.github.io"></form>
@@ -106,9 +112,19 @@ selector.xpath(xpath">
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫之xpath
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="python爬虫之xpath"><a href="#python爬虫之xpath" class="headerlink" title="python爬虫之xpath"></a>python爬虫之xpath</h1><ul>
+        <ul>
 <li>XPath是一门语言</li>
 <li>XPath可以在xml文件中查找信息</li>
 <li>XPath支持HTML</li>
@@ -140,7 +156,7 @@ selector.xpath(xpath">
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zitongchen.github.io/2017/03/12/python爬虫之xpath/" data-id="cj069kg9i00011ccyzu8dhw3s" class="article-share-link">Share</a>
+      <a data-url="https://zitongchen.github.io/2017/03/12/python爬虫之xpath/" data-id="cj069kg9i00011ccyzu8dhw3s" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -150,17 +166,17 @@ selector.xpath(xpath">
 <nav id="article-nav">
   
     <a href="/2017/03/12/python爬虫之requests/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          (no title)
+          python爬虫之requests
         
       </div>
     </a>
   
   
     <a href="/2017/03/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -193,20 +209,20 @@ selector.xpath(xpath">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/03/12/在python中使用正则表达式/">(no title)</a>
+            <a href="/2017/03/12/在python中使用正则表达式/">在python中使用正则表达式</a>
           </li>
         
           <li>
-            <a href="/2017/03/12/python爬虫之requests/">(no title)</a>
+            <a href="/2017/03/12/python爬虫之requests/">python爬虫之requests</a>
           </li>
         
           <li>
-            <a href="/2017/03/12/python爬虫之xpath/">(no title)</a>
+            <a href="/2017/03/12/python爬虫之xpath/">python爬虫之xpath</a>
           </li>
         
           <li>
@@ -226,7 +242,7 @@ selector.xpath(xpath">
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Tony<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

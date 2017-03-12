@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tony&#39;s Blog</title>
+  <title>在python中使用正则表达式 | Tony&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在python中使用正则表达式在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的">
+  <meta name="description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
+语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tony's Blog">
+<meta property="og:title" content="在python中使用正则表达式">
 <meta property="og:url" content="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/index.html">
 <meta property="og:site_name" content="Tony's Blog">
-<meta property="og:description" content="在python中使用正则表达式在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的">
-<meta property="og:updated_time" content="2017-03-12T05:55:21.083Z">
+<meta property="og:description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
+语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
+<meta property="og:updated_time" content="2017-03-12T05:59:25.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tony's Blog">
-<meta name="twitter:description" content="在python中使用正则表达式在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的">
+<meta name="twitter:title" content="在python中使用正则表达式">
+<meta name="twitter:description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
+语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
   
     <link rel="alternate" href="/atom.xml" title="Tony&#39;s Blog" type="application/atom+xml">
   
@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zitongchen.github.io"></form>
@@ -76,9 +76,19 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在python中使用正则表达式
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在python中使用正则表达式"><a href="#在python中使用正则表达式" class="headerlink" title="在python中使用正则表达式"></a>在python中使用正则表达式</h1><p>在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入<code>re</code>包</p>
+        <p>在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入<code>re</code>包</p>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>\d</code>匹配数字1-9<br><code>\w</code>匹配字符<br><code>[ ]</code>匹配集合里面的字符<br><code>+</code>匹配前面出现的正则表达式1次或多次<br><code>.</code>表示匹配任意一个字符，除换行符除外， <code>x.</code>匹配<code>xy23</code>中的<code>xy</code>,若是<code>x..</code>则匹配出<code>xy2</code><br><code>*</code>表示匹配0个或多个其前面的字符,<code>x*</code>匹配<code>xxxy123</code>中的<code>xxx</code><br><code>?</code>表示匹配0个或1个其前面的字符,<code>x?</code>匹配<code>xxxy123</code>中的<code>x</code><br><code>.*</code>是贪婪匹配,<code>x.*x</code>它会匹配<code>xhelloxxworldx</code>的整个字符<br><code>.*?</code>是最小匹配，<code>x.*?x</code> 它会匹配<code>xhelloxxworldx</code>中的<code>xhellox</code><br>python中正则表示式的分组，在python中正则表达式的分组使用<code>( )</code>表示:</p>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><code>search(pattern, string, flags=0)</code>函数匹配字符串符合正则表达式的第一个位置<br><code>re.findall(pattern, string, flags=0)</code>函数匹配字符串中所以符合正则表达式的字符串<br>更多的内容请上官网<a href="http://python.usyiyi.cn/translate/python_352/library/re.html" target="_blank" rel="external">re表达式库</a>查询</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line">code = <span class="string">'123xxhelloxx567xxworldxx89'</span></div><div class="line">f = re.search(<span class="string">'xx(.*?)xx'</span>,code).group(<span class="number">1</span>)</div><div class="line">print(f)</div><div class="line"><span class="comment">#输出答案为hello,若使.group(0)输出的是所匹配的字符串xxhelloxx</span></div><div class="line"><span class="comment">#若是使用贪婪匹配的，‘(.*)’上述输出的结果为helloxx567xxworld,若是.group(0)输出的则是xxhelloxx566xxworldxx</span></div></pre></td></tr></table></figure>
@@ -88,7 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/" data-id="cj069kg9y00021ccyolsc4ha9" class="article-share-link">Share</a>
+      <a data-url="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/" data-id="cj069kg9y00021ccyolsc4ha9" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -99,8 +109,8 @@
   
   
     <a href="/2017/03/12/python爬虫之requests/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">python爬虫之requests</div>
     </a>
   
 </nav>
@@ -132,20 +142,20 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/03/12/在python中使用正则表达式/">(no title)</a>
+            <a href="/2017/03/12/在python中使用正则表达式/">在python中使用正则表达式</a>
           </li>
         
           <li>
-            <a href="/2017/03/12/python爬虫之requests/">(no title)</a>
+            <a href="/2017/03/12/python爬虫之requests/">python爬虫之requests</a>
           </li>
         
           <li>
-            <a href="/2017/03/12/python爬虫之xpath/">(no title)</a>
+            <a href="/2017/03/12/python爬虫之xpath/">python爬虫之xpath</a>
           </li>
         
           <li>
@@ -165,7 +175,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Tony<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
