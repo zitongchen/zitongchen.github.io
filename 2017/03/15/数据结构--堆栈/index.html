@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构,堆栈," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -91,22 +91,16 @@
 
 
 
-<meta name="description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。
-堆栈的顺序表示与实现保存在SeqStack.h
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+<meta name="description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构--堆栈">
 <meta property="og:url" content="https://zitongchen.github.io/2017/03/15/数据结构--堆栈/index.html">
 <meta property="og:site_name" content="Tony's Notes">
-<meta property="og:description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。
-堆栈的顺序表示与实现保存在SeqStack.h
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
-<meta property="og:updated_time" content="2017-03-15T08:10:51.058Z">
+<meta property="og:description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。">
+<meta property="og:updated_time" content="2017-03-15T08:51:45.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构--堆栈">
-<meta name="twitter:description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。
-堆栈的顺序表示与实现保存在SeqStack.h
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+<meta name="twitter:description" content="堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。">
 
 
 
@@ -395,6 +389,7 @@
 
       
         <p>堆栈是一种特殊的线性表，堆栈的数据元素以及数据元素间的逻辑关系和线性表完成相同的，差别是：线性表可以在任何位置插入删除数据，而堆栈只允许在固定的一端进行插入和删除数据元素操作。</p>
+<a id="more"></a>
 <p>堆栈的顺序表示与实现保存在<code>SeqStack.h</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//顺序堆栈的结构体</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">&#123;</div><div class="line">    DataType <span class="built_in">stack</span>[MaxStackSize];</div><div class="line">    <span class="keyword">int</span> top;</div><div class="line">&#125; SeqStack;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackInitiate</span><span class="params">(SeqStack *S)</span></span></div><div class="line">&#123;</div><div class="line">    S-&gt;top = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackNotEmpty</span><span class="params">(SeqStack S)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(S.top &lt;= <span class="number">0</span> ) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">StachPush</span><span class="params">(SeqStack *S, DataType x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(S-&gt;top &gt;= MaxStackSize)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"堆栈已满\n"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        S-&gt;<span class="built_in">stack</span>[S-&gt;top] = x;</div><div class="line">        S-&gt;top ++;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackPop</span><span class="params">(SeqStack *S, DataType *d)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(S-&gt;top &lt;= <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"堆栈已空\n"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        S-&gt;top--;</div><div class="line">        *d = S-&gt;<span class="built_in">stack</span>[S-&gt;top];</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackTop</span><span class="params">(SeqStack S, DataType *d)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(S.top &lt;= <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"堆栈已空\n"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        *d = S.<span class="built_in">stack</span>[S.top - <span class="number">1</span>];</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>顺序堆栈的测试 <code>SeqStackMain.c</code></p>
@@ -432,7 +427,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构-堆栈/" rel="tag"># 数据结构,堆栈</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -551,7 +546,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
