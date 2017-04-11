@@ -94,7 +94,7 @@
 <meta name="description" content="Learn and live...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tony's Notes">
-<meta property="og:url" content="https://zitongchen.github.io/tags/python/index.html">
+<meta property="og:url" content="https://zitongchen.github.io/tags/Python/index.html">
 <meta property="og:site_name" content="Tony's Notes">
 <meta property="og:description" content="Learn and live...">
 <meta name="twitter:card" content="summary">
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://zitongchen.github.io/tags/python/"/>
+  <link rel="canonical" href="https://zitongchen.github.io/tags/Python/"/>
 
 
 
 
 
-  <title> 标签: python | Tony's Notes </title>
+  <title> 标签: Python | Tony's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +265,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        python
+        Python
         <small>标签</small>
       </h2>
     </div>
@@ -278,9 +278,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/04/01/Python使用时掉进的坑/" itemprop="url">
+            <a class="post-title-link" href="/2017/03/31/Python安装Highchart/" itemprop="url">
               
-                <span itemprop="name">Python使用时掉进的坑</span>
+                <span itemprop="name">Python安装Highchart</span>
               
             </a>
         
@@ -288,9 +288,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-01T00:00:00+08:00"
-              content="2017-04-01" >
-          04-01
+              datetime="2017-03-31T00:00:00+08:00"
+              content="2017-03-31" >
+          03-31
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/03/30/Python知识(一)/" itemprop="url">
+              
+                <span itemprop="name">Python知识(一)</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-03-30T00:00:00+08:00"
+              content="2017-03-30" >
+          03-30
         </time>
       </div>
 
@@ -344,7 +372,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -366,7 +394,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -627,40 +655,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-
-  
-</body>
-</html>
-loud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');

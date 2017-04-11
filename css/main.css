@@ -1123,6 +1123,19 @@ pre .javascript .function {
   font-weight: bold;
   line-height: 1;
 }
+.post-body a {
+  border-bottom: none;
+  color: #59dead;
+  text-decoration: none;
+}
+.post-body a:hover {
+  color: #48ca99;
+  text-decoration: underline;
+}
+.post-body code {
+  color: #d85f73;
+  background: #f9e4e4;
+}
 .post-sticky-flag {
   display: inline-block;
   font-size: 16px;
@@ -1148,15 +1161,6 @@ pre .javascript .function {
   .post-body .highlight .gutter pre {
     padding-right: 10px;
   }
-}
-.posts-expand .post-body p a {
-  border-bottom: none;
-  color: #009a61;
-  text-decoration: none;
-}
-.posts-expand .post-body p a:hover {
-  color: #004e31;
-  text-decoration: underline;
 }
 @media (min-width: 992px) {
   .posts-expand .post-body {
@@ -1196,7 +1200,7 @@ pre .javascript .function {
   visibility: visible;
 }
 .posts-expand .post-body ul li {
-  list-style: circle;
+  list-style: disc;
 }
 .posts-expand .post-body img {
   box-sizing: border-box;
@@ -1451,6 +1455,9 @@ pre .javascript .function {
   border-radius: 0;
   line-height: 2;
   margin: 0 4px 8px 4px;
+}
+.post-button .btn:hover {
+  text-decoration: none;
 }
 .post-button .fa-fw {
   width: 1.285714285714286em;
@@ -1707,7 +1714,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c3c9aa;
+  background: #2618ff;
 }
 .links-of-blogroll {
   font-size: 13px;
