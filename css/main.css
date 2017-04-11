@@ -277,13 +277,13 @@ p {
   margin: 0 0 25px 0;
 }
 a {
-  color: #555;
+  color: #009a61;
   text-decoration: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
+  color: #004e31;
   border-bottom-color: #222;
 }
 blockquote {
@@ -434,11 +434,11 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 850px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
-    width: 900px;
+    width: 1050px;
   }
 }
 .main {
@@ -446,11 +446,11 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 850px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
-    width: 900px;
+    width: 1050px;
   }
 }
 .footer {
@@ -463,11 +463,11 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 850px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
-    width: 900px;
+    width: 1050px;
   }
 }
 pre,
@@ -1149,6 +1149,15 @@ pre .javascript .function {
     padding-right: 10px;
   }
 }
+.posts-expand .post-body p a {
+  border-bottom: none;
+  color: #009a61;
+  text-decoration: none;
+}
+.posts-expand .post-body p a:hover {
+  color: #004e31;
+  text-decoration: underline;
+}
 @media (min-width: 992px) {
   .posts-expand .post-body {
     text-align: justify;
@@ -1436,7 +1445,7 @@ pre .javascript .function {
   margin-top: 50px;
 }
 .post-button .btn {
-  color: #555;
+  color: #009a61;
   font-size: 14px;
   background: transparent;
   border-radius: 0;
@@ -1477,11 +1486,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #009a61;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #004e31;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1698,7 +1707,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff98ff;
+  background: #eeff62;
 }
 .links-of-blogroll {
   font-size: 13px;
