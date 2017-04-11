@@ -107,7 +107,7 @@ Maven的主要目的是为开发者提供
 
 一个可复用，可维护，更易理解的工程综合模型
 与这个模型交互">
-<meta property="og:updated_time" content="2017-04-11T03:21:14.562Z">
+<meta property="og:updated_time" content="2017-04-11T08:44:02.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 学习笔记">
 <meta name="twitter:description" content="Maven是一个项目管理与整合工具。Maven为开发者提供了一套完整的构建生命框架，开发团队可以快速的自动完成工程的基础构建配置，应为Maven使用了一个标准的目录结构和一个默认的构建声明周期。
@@ -436,6 +436,135 @@ Maven的主要目的是为开发者提供
 <li>设置Maven的环境变量，<code>M2_HOME={Maven的安装目录}</code>,把 <code>%M2_HOME%\bin</code>添加到系统<code>path</code>变量后面</li>
 <li>在cmd命令窗口输入<code>mvn --version</code>（window系统）验证是否安装成功，若有Maven的版本信息输出证明安装成功</li>
 </ul>
+<h3 id="Maven-Pom"><a href="#Maven-Pom" class="headerlink" title="Maven Pom"></a>Maven Pom</h3><p>Pom代表工程对象模型，它是使用Maven工作时的基本组建，是一个xml格式文件。存放在工程的根目录下，并命名为pom.xml。POM中包含关于工程和配置信息，Maven使用这些信息构建工程</p>
+<p>Pom举例</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> </span></div><div class="line">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> 			      <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>MavenDemo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> #工程组名称</div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>MavenDemo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  #工程标识</div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span> #工程版本</div><div class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span>  #package 类型</div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>MavenDemo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">description</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span>  #基本配置信息</div><div class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span> #jar包映射集</div><div class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span> #单个jar包映射</div><div class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.glassfish<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>bean-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0-JBoss-4.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span>  #Maven插件集</div><div class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span> #单个插件</div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">failOnMissingWebXml</span>&gt;</span>false<span class="tag">&lt;/<span class="name">failOnMissingWebXml</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>每个工程只有一个POM文件</p>
+<ul>
+<li>每个POM文件需要project元素和三个必须字段：groupId,artifactId,version</li>
+<li>仓库的标识为groupId+artifactId+version</li>
+</ul>
+<h3 id="构建的生命周期"><a href="#构建的生命周期" class="headerlink" title="构建的生命周期"></a>构建的生命周期</h3><p>Maven构建工程会按照定义的阶段序列顺序执行每个阶段的注册目标，Maven有三个标准的生命周期：</p>
+<ul>
+<li>clean</li>
+<li>default(or build)</li>
+<li>site</li>
+</ul>
+<p>目标表示一个特定的，对构建和管理工程有帮助的任务，它可以有0个或多个构建阶段</p>
+<p>例如：<code>mvn clean package</code>Maven指挥按顺序执行<code>clean -&gt; package</code>的构建阶段，而package以后的阶段maven不会执行</p>
+<h4 id="clean的声明周期"><a href="#clean的声明周期" class="headerlink" title="clean的声明周期"></a>clean的声明周期</h4><ul>
+<li>pre-clean</li>
+<li>clean</li>
+<li>post-clean</li>
+</ul>
+<p>Default(or Build)主要生命周期</p>
+<table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate</td>
+<td>检查工程配置是否正确</td>
+</tr>
+<tr>
+<td>initialize</td>
+<td>初始化构建状态，例如设置属性</td>
+</tr>
+<tr>
+<td>complie</td>
+<td>编译工程源码</td>
+</tr>
+<tr>
+<td>test-complie</td>
+<td>编译测试源代码到测试目录</td>
+</tr>
+<tr>
+<td>test</td>
+<td>使用适当的单元测试框架运行测试</td>
+</tr>
+<tr>
+<td>package</td>
+<td>获取编译后的代码，按照可发布的格式进行打包（war,jar）</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>运行检查操作来验证工程包是有效的，并满足要求</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装工程包到本地仓库，该仓库可以作为本地其他项目的依赖</td>
+</tr>
+<tr>
+<td>deploy</td>
+<td>拷贝最终的工程包到远程仓库中，共享给其他工程人员</td>
+</tr>
+</tbody>
+</table>
+<h4 id="site-生命周期"><a href="#site-生命周期" class="headerlink" title="site 生命周期"></a>site 生命周期</h4><p>Maven site 插件一般用来创建新的报告文档，部署站点等</p>
+<p>site的生命阶段：</p>
+<ul>
+<li>pre-site</li>
+<li>site</li>
+<li>post-site</li>
+<li>site-deploy</li>
+</ul>
+<h3 id="Maven的配置文件"><a href="#Maven的配置文件" class="headerlink" title="Maven的配置文件"></a>Maven的配置文件</h3><p>配置文件是一组配置集合，是用来覆盖Maven构建的默认配置。使用配置文件可以为不同阶段构建过程，例如生产环境和部署环境等</p>
+<p>Profile主要有三种类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义文件的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per Pro</td>
+<td>定义在每个工程的pom.xml中</td>
+</tr>
+<tr>
+<td>Per User</td>
+<td>定义在Maven设置的xml中(%user_home%/.m2/settings.xml</td>
+</tr>
+<tr>
+<td>Global</td>
+<td>定义在Maven全局配置文件中(%M2_HOME%/conf/settings.xml)</td>
+</tr>
+</tbody>
+</table>
+<p>Profile在pom.xml中使用activeProfiles/profiles元素指定</p>
+<p>Profile 的激活主要有，显式的使用命令控制台输入，通过maven设置</p>
+<ul>
+<li><p>显示Profile激活</p>
+<p>假定在E:\mvn目录下创建pom.xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></div><div class="line">  <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">  <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0</span></div><div class="line">  http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.companyname.projectgroup<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>project<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>test<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-antrun-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">executions</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">execution</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">phase</span>&gt;</span>test<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">goals</span>&gt;</span></div><div class="line">            	<span class="tag">&lt;<span class="name">goal</span>&gt;</span>run<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">tasks</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">echo</span>&gt;</span>Using env.test.properties<span class="tag">&lt;/<span class="name">echo</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tasks</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">profile</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>打开命令控制台，转到pom.xml文件所在目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">e:\mvn&gt;mvn test -Ptest  #在构建测设的时候使用 id为test的profile</div></pre></td></tr></table></figure>
+<p>Maven将开始处理test Profile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">[INFO] Scanning for projects...</div><div class="line">[INFO]</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Building project 1.0</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ project ---</div><div class="line">[WARNING] Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!</div><div class="line">[INFO] skip non existing resourceDirectory E:\mvn\src\main\resources</div><div class="line">[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ project ---</div><div class="line">[INFO] No sources to compile</div><div class="line">[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ project ---</div><div class="line">[WARNING] Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!</div><div class="line">[INFO] skip non existing resourceDirectory E:\mvn\src\test\resources</div><div class="line">[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ project ---</div><div class="line">[INFO] No sources to compile</div><div class="line">[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ project ---</div><div class="line">[INFO] No tests to run.</div><div class="line">[INFO] --- maven-antrun-plugin:1.1:run (default) @ project ---</div><div class="line">[INFO] Executing tasks</div><div class="line">     [echo] Using env.test.properties  #执行了echo命令行</div><div class="line">[INFO] Executed tasks</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: 15.211 s</div><div class="line">[INFO] Finished at: 2017-04-11T16:24:12+08:00</div><div class="line">[INFO] Final Memory: 11M/119M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></td></tr></table></figure>
+</li>
+<li><p>maven激活</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></div><div class="line">  <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">  <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0</span></div><div class="line">  http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>maven.dev.snaponglobal.com<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Internal Artifactory Maven repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo1.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>test<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span>  #定义了执行id为test的profile</div><div class="line">  <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在命令控制台跳转到pom.xml的目录执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">e:\mvn&gt;mvn test</div></pre></td></tr></table></figure>
+<h3 id="Maven仓库"><a href="#Maven仓库" class="headerlink" title="Maven仓库"></a>Maven仓库</h3><p>Maven仓库是存放项目jar和插件的地方</p>
+<p>Maven仓库有三种类型：</p>
+</li>
+<li><p>本地(local)</p>
+<p>Maven本地仓库是机器上的一个文件夹，默认存放在%user_home%目录下</p>
+<p>修改<code>本地仓库默认位置</code>可以修改Maven的配置文件，在%M2_HOME%\conf目录中的settings.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></div><div class="line"><span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line"><span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0</span></div><div class="line">http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">localRepository</span>&gt;</span></div><div class="line">      &#123;在这里自定义仓库路径，例如：E:\workspace\mavenRepository&#125;</div><div class="line">  	<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>P39（待续）</p>
+</li>
+<li><p>中央(central)</p>
+</li>
+<li><p>远程(remote)</p>
+</li>
+</ul>
 
       
     </div>
@@ -611,7 +740,7 @@ Maven的主要目的是为开发者提供
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">1.</span> <span class="nav-text">安装Maven</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">1.</span> <span class="nav-text">安装Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-Pom"><span class="nav-number">2.</span> <span class="nav-text">Maven Pom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建的生命周期"><span class="nav-number">3.</span> <span class="nav-text">构建的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#clean的声明周期"><span class="nav-number">3.1.</span> <span class="nav-text">clean的声明周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#site-生命周期"><span class="nav-number">3.2.</span> <span class="nav-text">site 生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven的配置文件"><span class="nav-number">4.</span> <span class="nav-text">Maven的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven仓库"><span class="nav-number">5.</span> <span class="nav-text">Maven仓库</span></a></li></ol></div>
             
 
           </div>
