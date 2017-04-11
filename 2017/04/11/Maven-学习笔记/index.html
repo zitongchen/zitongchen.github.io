@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python 爬虫," />
+  <meta name="keywords" content="Maven," />
 
 
 
@@ -87,19 +87,31 @@
 
 
 
-<meta name="description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
+<meta name="description" content="Maven是一个项目管理与整合工具。Maven为开发者提供了一套完整的构建生命框架，开发团队可以快速的自动完成工程的基础构建配置，应为Maven使用了一个标准的目录结构和一个默认的构建声明周期。
+总的来说,Maven简化了工程的构建过程，并对其标准化。其衔接了编译，发布，文档生成，团队合作和其他的任务
+Maven的主要目的是为开发者提供
+
+一个可复用，可维护，更易理解的工程综合模型
+与这个模型交互">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在python中使用正则表达式">
-<meta property="og:url" content="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/index.html">
+<meta property="og:title" content="Maven 学习笔记">
+<meta property="og:url" content="https://zitongchen.github.io/2017/04/11/Maven-学习笔记/index.html">
 <meta property="og:site_name" content="Tony's Notes">
-<meta property="og:description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
-<meta property="og:updated_time" content="2017-03-12T14:30:05.584Z">
+<meta property="og:description" content="Maven是一个项目管理与整合工具。Maven为开发者提供了一套完整的构建生命框架，开发团队可以快速的自动完成工程的基础构建配置，应为Maven使用了一个标准的目录结构和一个默认的构建声明周期。
+总的来说,Maven简化了工程的构建过程，并对其标准化。其衔接了编译，发布，文档生成，团队合作和其他的任务
+Maven的主要目的是为开发者提供
+
+一个可复用，可维护，更易理解的工程综合模型
+与这个模型交互">
+<meta property="og:updated_time" content="2017-04-11T03:21:14.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在python中使用正则表达式">
-<meta name="twitter:description" content="在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入re包
-语法\d匹配数字1-9\w匹配字符[ ]匹配集合里面的字符+匹配前面出现的正则表达式1次或多次.表示匹配任意一个字符，除换行符除外， x.匹配xy23中的xy,若是x..则匹配出xy2*表示匹配0个或多个其前面的字符,x*匹配xxxy123中的xxx?表示匹配0个或1个其前">
+<meta name="twitter:title" content="Maven 学习笔记">
+<meta name="twitter:description" content="Maven是一个项目管理与整合工具。Maven为开发者提供了一套完整的构建生命框架，开发团队可以快速的自动完成工程的基础构建配置，应为Maven使用了一个标准的目录结构和一个默认的构建声明周期。
+总的来说,Maven简化了工程的构建过程，并对其标准化。其衔接了编译，发布，文档生成，团队合作和其他的任务
+Maven的主要目的是为开发者提供
+
+一个可复用，可维护，更易理解的工程综合模型
+与这个模型交互">
 
 
 
@@ -127,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/"/>
+  <link rel="canonical" href="https://zitongchen.github.io/2017/04/11/Maven-学习笔记/"/>
 
 
 
 
 
-  <title> 在python中使用正则表达式 | Tony's Notes </title>
+  <title> Maven 学习笔记 | Tony's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://zitongchen.github.io/2017/03/12/在python中使用正则表达式/">
+    <link itemprop="mainEntityOfPage" href="https://zitongchen.github.io/2017/04/11/Maven-学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -273,7 +285,7 @@
             
             
               
-                在python中使用正则表达式
+                Maven 学习笔记
               
             
           </h1>
@@ -288,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T00:00:00+08:00">
-                2017-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T00:00:00+08:00">
+                2017-04-11
               </time>
             
 
@@ -298,28 +310,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -346,12 +336,61 @@
       
 
       
-        <p>在使用python制作爬虫之前，我们必须要对python的正则表达式有一定的了解,在python中使用正则表示式要导入<code>re</code>包</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>\d</code>匹配数字1-9<br><code>\w</code>匹配字符<br><code>[ ]</code>匹配集合里面的字符<br><code>+</code>匹配前面出现的正则表达式1次或多次<br><code>.</code>表示匹配任意一个字符，除换行符除外， <code>x.</code>匹配<code>xy23</code>中的<code>xy</code>,若是<code>x..</code>则匹配出<code>xy2</code><br><code>*</code>表示匹配0个或多个其前面的字符,<code>x*</code>匹配<code>xxxy123</code>中的<code>xxx</code><br><code>?</code>表示匹配0个或1个其前面的字符,<code>x?</code>匹配<code>xxxy123</code>中的<code>x</code><br><code>.*</code>是贪婪匹配,<code>x.*x</code>它会匹配<code>xhelloxxworldx</code>的整个字符<br><code>.*?</code>是最小匹配，<code>x.*?x</code> 它会匹配<code>xhelloxxworldx</code>中的<code>xhellox</code><br>python中正则表示式的分组，在python中正则表达式的分组使用<code>( )</code>表示:</p>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><code>search(pattern, string, flags=0)</code>函数匹配字符串符合正则表达式的第一个位置<br><code>re.findall(pattern, string, flags=0)</code>函数匹配字符串中所以符合正则表达式的字符串<br>更多的内容请上官网<a href="http://python.usyiyi.cn/translate/python_352/library/re.html" target="_blank" rel="external">re表达式库</a>查询</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line">code = <span class="string">'123xxhelloxx567xxworldxx89'</span></div><div class="line">f = re.search(<span class="string">'xx(.*?)xx'</span>,code).group(<span class="number">1</span>)</div><div class="line">print(f)</div><div class="line"><span class="comment">#输出答案为hello,若使.group(0)输出的是所匹配的字符串xxhelloxx</span></div><div class="line"><span class="comment">#若是使用贪婪匹配的，‘(.*)’上述输出的结果为helloxx567xxworld,若是.group(0)输出的则是xxhelloxx566xxworldxx</span></div></pre></td></tr></table></figure>
-<p><code>re.S</code>表示<code>.</code>可以匹配任何的字符，包括换行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line">s = <span class="string">'''123xxhello</span></div><div class="line">xx567xxworldxx89'''</div><div class="line">d = re.findall(<span class="string">'xx(.*?)xx'</span>,s)</div><div class="line">print(d)</div><div class="line"><span class="comment">#输出的结果为并不是`hello`和`world`而是`567`，因为`.`可以匹配任意字符，但不可以匹配换行</span></div><div class="line"></div><div class="line"><span class="comment">#为了要输出正确的结果，要传入改函数的默认参数`re.S`</span></div><div class="line">text = re.findall(<span class="string">'xx(.x?)xx'</span>,s,re.S)</div><div class="line"><span class="comment">#利用re.findall()函数返回的是一个list集合而不是Match，所以不可以使用.grout()来读取分组</span></div><div class="line"><span class="keyword">for</span> each <span class="keyword">in</span> d:</div><div class="line">    print(each)</div><div class="line"><span class="comment">#输出结果为hello和world</span></div></pre></td></tr></table></figure>
+        <p>Maven是一个项目管理与整合工具。Maven为开发者提供了一套完整的构建生命框架，开发团队可以快速的自动完成工程的基础构建配置，应为Maven使用了一个标准的目录结构和一个默认的构建声明周期。</p>
+<p>总的来说,Maven简化了工程的构建过程，并对其标准化。其衔接了编译，发布，文档生成，团队合作和其他的任务</p>
+<p>Maven的主要目的是为开发者提供</p>
+<ul>
+<li>一个可复用，可维护，更易理解的工程综合模型</li>
+<li>与这个模型交互的插件或者工具</li>
+</ul>
+<p>Maven工程结构和内容被定义在一个XML文件中-pom.xml,是Project Object Model的简称，该文件是整个Maven系统的基础组件。</p>
+<p>Maven是约定优于配置的，当创建Maven工程时，Maven会创建默认的工程结构，开发者只需把文件放到适当的工程结构便可。</p>
+<p>以在MyEclipse 构建的一个Maven Javaweb为例说明Maven的工程结构</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">结构目录</th>
+<th style="text-align:left">配置文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">src/main/java</td>
+<td style="text-align:left">Java源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">src/main/resources</td>
+<td style="text-align:left">项目资源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">src/test/java</td>
+<td style="text-align:left">测试源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">src/test/resources</td>
+<td style="text-align:left">测试资源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">target</td>
+<td style="text-align:left">编译文件等（自动生成）</td>
+</tr>
+<tr>
+<td style="text-align:left">src/main/webapp</td>
+<td style="text-align:left">Webapp文件</td>
+</tr>
+<tr>
+<td style="text-align:left">……</td>
+<td style="text-align:left">…..</td>
+</tr>
+</tbody>
+</table>
+<h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><ul>
+<li>Maven是一个基于Java的工具，在使用Maven构建工程之前要配置Java的运行环境（关于如何安装Java运行环境自行百度）</li>
+<li>下载Maven文件 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">Maven 3.5.0 文件</a></li>
+<li>解压Maven 文件，把解压文件放置在你想安装Maven的目录</li>
+<li>设置Maven的环境变量，<code>M2_HOME={Maven的安装目录}</code>,把 <code>%M2_HOME%\bin</code>添加到系统<code>path</code>变量后面</li>
+<li>在cmd命令窗口输入<code>mvn --version</code>（window系统）验证是否安装成功，若有Maven的版本信息输出证明安装成功</li>
+</ul>
 
       
     </div>
@@ -375,7 +414,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python-爬虫/" rel="tag"># Python 爬虫</a>
+            <a href="/tags/Maven/" rel="tag"># Maven</a>
           
         </div>
       
@@ -388,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/python爬虫之requests/" rel="next" title="python爬虫之requests">
-                <i class="fa fa-chevron-left"></i> python爬虫之requests
+              <a href="/2017/04/01/Python使用时掉进的坑/" rel="next" title="Python使用时掉进的坑">
+                <i class="fa fa-chevron-left"></i> Python使用时掉进的坑
               </a>
             
           </div>
@@ -397,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/12/python爬虫之xpath/" rel="prev" title="python爬虫之xpath">
-                python爬虫之xpath <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">1.</span> <span class="nav-text">安装Maven</span></a></li></ol></div>
             
 
           </div>
