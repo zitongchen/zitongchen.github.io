@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-JAVA -IO," />
 
 
 
@@ -91,29 +91,26 @@
 
 
 
-<meta name="description" content="title: Java-IO学习笔记date: 2017-8-19categories: Javatags: -JAVA -IO
-Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
+<meta name="description" content="Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
 
 File类java.io.File类只用于表示文件（目录）的信息（名称，大小等），不能用于文件内容的访问
-File读取一个目录，Fi">
+File读取一个目录，File有多个构造函数，不但可读取目录，同时还可以读取文件//在window系统中书写路径的时候需要使用“\\”表示分隔符，因为涉及到">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tony's Notes">
-<meta property="og:url" content="https://zitongchen.github.io/2017/09/16/Java-IO学习笔记/index.html">
+<meta property="og:title" content="Java-IO学习笔记">
+<meta property="og:url" content="https://zitongchen.github.io/2017/08/19/Java-IO学习笔记/index.html">
 <meta property="og:site_name" content="Tony's Notes">
-<meta property="og:description" content="title: Java-IO学习笔记date: 2017-8-19categories: Javatags: -JAVA -IO
-Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
+<meta property="og:description" content="Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
 
 File类java.io.File类只用于表示文件（目录）的信息（名称，大小等），不能用于文件内容的访问
-File读取一个目录，Fi">
+File读取一个目录，File有多个构造函数，不但可读取目录，同时还可以读取文件//在window系统中书写路径的时候需要使用“\\”表示分隔符，因为涉及到">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201707/10072846_0eWJ.jpg">
-<meta property="og:updated_time" content="2017-09-16T09:14:43.798Z">
+<meta property="og:updated_time" content="2017-09-16T09:25:42.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tony's Notes">
-<meta name="twitter:description" content="title: Java-IO学习笔记date: 2017-8-19categories: Javatags: -JAVA -IO
-Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
+<meta name="twitter:title" content="Java-IO学习笔记">
+<meta name="twitter:description" content="Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解
 
 File类java.io.File类只用于表示文件（目录）的信息（名称，大小等），不能用于文件内容的访问
-File读取一个目录，Fi">
+File读取一个目录，File有多个构造函数，不但可读取目录，同时还可以读取文件//在window系统中书写路径的时候需要使用“\\”表示分隔符，因为涉及到">
 <meta name="twitter:image" content="https://static.oschina.net/uploads/img/201707/10072846_0eWJ.jpg">
 
 
@@ -142,13 +139,13 @@ File读取一个目录，Fi">
 
 
 
-  <link rel="canonical" href="https://zitongchen.github.io/2017/09/16/Java-IO学习笔记/"/>
+  <link rel="canonical" href="https://zitongchen.github.io/2017/08/19/Java-IO学习笔记/"/>
 
 
 
 
 
-  <title>  | Tony's Notes </title>
+  <title> Java-IO学习笔记 | Tony's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +284,7 @@ File读取一个目录，Fi">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://zitongchen.github.io/2017/09/16/Java-IO学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://zitongchen.github.io/2017/08/19/Java-IO学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -308,7 +305,7 @@ File读取一个目录，Fi">
             
             
               
-                
+                Java-IO学习笔记
               
             
           </h1>
@@ -323,8 +320,8 @@ File读取一个目录，Fi">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T17:14:41+08:00">
-                2017-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T00:00:00+08:00">
+                2017-08-19
               </time>
             
 
@@ -334,6 +331,28 @@ File读取一个目录，Fi">
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -341,7 +360,7 @@ File读取一个目录，Fi">
 
           
           
-             <span id="/2017/09/16/Java-IO学习笔记/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2017/08/19/Java-IO学习笔记/" class="leancloud_visitors" data-flag-title="Java-IO学习笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,8 +389,7 @@ File读取一个目录，Fi">
       
 
       
-        <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: Java-IO学习笔记</div><div class="line">date: 2017-8-19</div><div class="line">categories: Java</div><div class="line">tags: -JAVA -IO</div></pre></td></tr></table></figure>
-<p>Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解</p>
+        <p>Java中的IO具有很多的类，在之前的学习中经常被其弄得不知所云，因此问度娘找了一幅JavaIO流的关系图，以加深对JavaIO的理解</p>
 <p><img src="https://static.oschina.net/uploads/img/201707/10072846_0eWJ.jpg" alt="输入图片说明" title="在这里输入图片标题"></p>
 <h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><p>java.io.File类只用于表示文件（目录）的信息（名称，大小等），不能用于文件内容的访问</p>
 <p>File读取一个目录，File有多个构造函数，不但可读取目录，同时还可以读取文件<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">//在window系统中书写路径的时候需要使用“\\”表示分隔符，因为涉及到转义字符</span></div><div class="line">File file1 = <span class="keyword">new</span> File(<span class="string">"e:\\javaio\\filedemo"</span>);</div><div class="line"><span class="comment">//创建一级目录，若是想创建多级目录使用file1.mkdirs();</span></div><div class="line">file1.mkdir();</div><div class="line">File file2 = <span class="keyword">new</span> File(<span class="string">"e:\\javaio\\filedemo.txt"</span>);</div><div class="line"><span class="comment">//可以使用一个目录参数，一个文件名的参数读取文本文件</span></div><div class="line">File file3 = <span class="keyword">new</span> File(<span class="string">"e:\\javaio"</span>,<span class="string">"filedemo.txt"</span>);</div><div class="line"><span class="comment">//创建一个新的文本文件</span></div><div class="line">file3.createNewFile()</div><div class="line"><span class="comment">//获取文件的绝对路径</span></div><div class="line">file3.getAbsolutePath</div></pre></td></tr></table></figure></p>
@@ -473,6 +491,12 @@ File读取一个目录，Fi">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA-IO/" rel="tag"># -JAVA -IO</a>
+          
+        </div>
+      
 
       
         
@@ -482,8 +506,8 @@ File读取一个目录，Fi">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/21/Spring Data学习笔记/" rel="next" title="Spring Data学习笔记">
-                <i class="fa fa-chevron-left"></i> Spring Data学习笔记
+              <a href="/2017/08/18/Java基础--Socket/" rel="next" title="Java基础--Socket">
+                <i class="fa fa-chevron-left"></i> Java基础--Socket
               </a>
             
           </div>
@@ -491,6 +515,10 @@ File读取一个目录，Fi">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/20/Java多线程（一）/" rel="prev" title="Java多线程（一）">
+                Java多线程（一） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -586,7 +614,7 @@ File读取一个目录，Fi">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
