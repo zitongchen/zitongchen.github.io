@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zitongchen.github.io/2017/04/12/Hexo%E7%9A%84NexT%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96/</loc>
+    <loc>https://zitongchen.github.io/2017/09/16/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6-JUnit4/</loc>
     
-    <lastmod>2017-04-22T10:27:05.178Z</lastmod>
+    <lastmod>2017-09-16T08:55:37.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zitongchen.github.io/2017/09/16/Java%E6%97%A5%E5%BF%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2017-09-16T08:51:52.500Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zitongchen.github.io/2017/04/11/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2017-04-12T15:51:09.641Z</lastmod>
+    <lastmod>2017-09-16T08:49:38.747Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zitongchen.github.io/2017/04/12/Hexo%E7%9A%84NexT%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96/</loc>
+    
+    <lastmod>2017-04-22T10:27:05.178Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>https://zitongchen.github.io/about/index.html</loc>
     
     <lastmod>2017-04-10T13:55:22.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zitongchen.github.io/2017/03/31/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2017-03-31T03:01:12.516Z</lastmod>
     
   </url>
   
