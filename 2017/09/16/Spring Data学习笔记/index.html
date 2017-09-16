@@ -1,0 +1,881 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="title: Spring Data学习笔记date: 2017-8-21categories: springtags: spring-data
+什么是Spring Data 
+Spring Data项目的目的是为了简化构建基于 Spring 框架应用的数据访问计数，包括非关系数据库、Map-Reduce 框架、云数据服务等等；另外也包含对关系数据库的访问支持。
+本文主要简述Spring Data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tony's Notes">
+<meta property="og:url" content="https://zitongchen.github.io/2017/09/16/Spring Data学习笔记/index.html">
+<meta property="og:site_name" content="Tony's Notes">
+<meta property="og:description" content="title: Spring Data学习笔记date: 2017-8-21categories: springtags: spring-data
+什么是Spring Data 
+Spring Data项目的目的是为了简化构建基于 Spring 框架应用的数据访问计数，包括非关系数据库、Map-Reduce 框架、云数据服务等等；另外也包含对关系数据库的访问支持。
+本文主要简述Spring Data">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201708/14221413_nG0n.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201708/14221444_eZan.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201708/14223139_0pjH.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201708/14223157_XiVz.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201708/14223208_UMUl.png">
+<meta property="og:updated_time" content="2017-09-16T09:18:07.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tony's Notes">
+<meta name="twitter:description" content="title: Spring Data学习笔记date: 2017-8-21categories: springtags: spring-data
+什么是Spring Data 
+Spring Data项目的目的是为了简化构建基于 Spring 框架应用的数据访问计数，包括非关系数据库、Map-Reduce 框架、云数据服务等等；另外也包含对关系数据库的访问支持。
+本文主要简述Spring Data">
+<meta name="twitter:image" content="https://static.oschina.net/uploads/img/201708/14221413_nG0n.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zitongchen.github.io/2017/09/16/Spring Data学习笔记/"/>
+
+
+
+
+
+  <title>  | Tony's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tony's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://zitongchen.github.io/2017/09/16/Spring Data学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avater.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tony's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T17:17:02+08:00">
+                2017-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/16/Spring Data学习笔记/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: Spring Data学习笔记</div><div class="line">date: 2017-8-21</div><div class="line">categories: spring</div><div class="line">tags: spring-data</div></pre></td></tr></table></figure>
+<p><strong>什么是Spring Data</strong> </p>
+<p>Spring Data项目的目的是为了简化构建基于 Spring 框架应用的数据访问计数，包括非关系数据库、Map-Reduce 框架、云数据服务等等；另外也包含对关系数据库的访问支持。</p>
+<p>本文主要简述Spring Data JPA 与传统JDBC 和 Spring JDBC的优势，以及Spring Data JPA的简单使用</p>
+<h1 id="传统的JDBC操作数据库"><a href="#传统的JDBC操作数据库" class="headerlink" title="传统的JDBC操作数据库"></a>传统的JDBC操作数据库</h1><p>使用JDBC原生操作数据库，会有很多重复性的代码，代码冗余<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class StudentDAOImpl implements StudentDAO&#123;</div><div class="line">    @Override</div><div class="line">    public void save(Student student) &#123;</div><div class="line">        Connection connection = null;</div><div class="line">        String sql = &quot;insert into student(name, age) VALUES (?,?)&quot;;</div><div class="line">        PreparedStatement preparedStatement = null;</div><div class="line">        ResultSet resultSet = null;</div><div class="line">        try &#123;</div><div class="line">            connection = JDBCUtil.getConnection();  // 使用工具类获取数据库连接，减少代码冗余</div><div class="line">            preparedStatement = connection.prepareStatement(sql);  // 获取操作数据库对象</div><div class="line">            preparedStatement.setString(1, student.getName());  // 给sql语句的占位符赋值</div><div class="line">            preparedStatement.setInt(2, student.getAge());</div><div class="line">            preparedStatement.executeUpdate();  // 执行更新操作</div><div class="line">        &#125; catch (ClassNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; finally &#123;</div><div class="line">            JDBCUtil.release(resultSet, preparedStatement, connection);  // 关闭资源</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    @Override</div><div class="line">    public List&lt;Student&gt; query() &#123;</div><div class="line">        Connection connection = null;</div><div class="line">        String sql = &quot;select id, name, age from student&quot;;</div><div class="line">        PreparedStatement preparedStatement = null;</div><div class="line">        ResultSet resultSet = null;</div><div class="line">        List&lt;Student&gt; listStudent = new ArrayList&lt;&gt;();</div><div class="line">        try &#123;</div><div class="line">            connection = JDBCUtil.getConnection();</div><div class="line">            preparedStatement = connection.prepareStatement(sql);</div><div class="line">            resultSet = preparedStatement.executeQuery();  //执行查询操作</div><div class="line">            Student student = null;</div><div class="line">        /*对获取的结果集执行对对象赋值（这个在JDBC中简直麻烦）</div><div class="line">        */</div><div class="line">            while (resultSet.next()) &#123;</div><div class="line">                int id = resultSet.getInt(&quot;id&quot;);</div><div class="line">                String name = resultSet.getString(&quot;name&quot;);</div><div class="line">                int age = resultSet.getInt(&quot;age&quot;);</div><div class="line">                student = new Student();</div><div class="line">                student.setId(id);</div><div class="line">                student.setName(name);</div><div class="line">                student.setAge(age);</div><div class="line">                listStudent.add(student);</div><div class="line">            &#125;</div><div class="line">        &#125; catch (ClassNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; finally &#123;</div><div class="line">            JDBCUtil.release(resultSet, preparedStatement, connection);  // 关闭数据库资源</div><div class="line">        &#125;</div><div class="line">        return listStudent;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上述代码中虽然使用了JDBCUtil类减轻了创建连接和释放资源的过程，但获取对象还是麻烦</p>
+<h1 id="Spring-JDBC操作数据库"><a href="#Spring-JDBC操作数据库" class="headerlink" title="Spring JDBC操作数据库"></a>Spring JDBC操作数据库</h1><p>在Spring 中操作数据库可以使用Spring Jdbc Template,这使得Spring 可以简化对数据库的操作，在Spring Jdbc中对原生的JDBC操作数据库做了一层简单的封装，把获取数据库连接，释放数据库资源的行为封装起来，只需在spring的配置文件中进行简单的配置，即可直接在代码中使用Spring的JdbcTemplate对数据进行增删改查即可。<br>JdbcTemplate在Sping配置文件中的配置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</div><div class="line"></div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</div><div class="line">       http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;</div><div class="line">    &lt;!--配置数据源--&gt;</div><div class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</div><div class="line">        &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;</div><div class="line">        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;</div><div class="line">        &lt;property name=&quot;password&quot; value=&quot;1234&quot;/&gt;</div><div class="line">        &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/spring_data&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">    &lt;!--配置jdbcTemplate--&gt;</div><div class="line">    &lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;</div><div class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line">    </div><div class="line">    &lt;!--StudentDao的装配--&gt;</div><div class="line">    &lt;bean id=&quot;studentDAO&quot; class=&quot;cc.codingape.dao.StudentDAOSpringJdbcImpl&quot;&gt;</div><div class="line">        &lt;property name=&quot;jdbcTemplate&quot; ref=&quot;jdbcTemplate&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p>
+<p>使用了JdbcTemplate的Dao实现类<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by TONY on 2017/8/10.</div><div class="line"> * StudentDAO访问接口实现类：通过Spring jdbc 的方式操作</div><div class="line"> */</div><div class="line">public class StudentDAOSpringJdbcImpl implements StudentDAO &#123;</div><div class="line">    private JdbcTemplate jdbcTemplate;</div><div class="line">    @Override</div><div class="line">    public List&lt;Student&gt; query() &#123;</div><div class="line">        List&lt;Student&gt; studentList = new ArrayList&lt;&gt;();</div><div class="line">        String sql = &quot;select id, name, age from student&quot;;</div><div class="line">        jdbcTemplate.query(sql, new RowCallbackHandler() &#123;</div><div class="line">            /**</div><div class="line">             * 这个方法会循环执行resultSet里面的值，使用了回调接口获得结果集</div><div class="line">             * 获取结果集，把结果值里面的内容赋值给具体的对象</div><div class="line">             * @param resultSet</div><div class="line">             * @throws SQLException</div><div class="line">             */</div><div class="line">            @Override</div><div class="line">            public void processRow(ResultSet resultSet) throws SQLException &#123;</div><div class="line">                int id = resultSet.getInt(&quot;id&quot;);</div><div class="line">                String name = resultSet.getString(&quot;name&quot;);</div><div class="line">                int age = resultSet.getInt(&quot;age&quot;);</div><div class="line">                Student student = new Student();</div><div class="line">                student.setId(id);</div><div class="line">                student.setName(name);</div><div class="line">                student.setAge(age);</div><div class="line">                studentList.add(student);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        return studentList;</div><div class="line">    &#125;</div><div class="line">    @Override</div><div class="line">    public void save(Student student) &#123;</div><div class="line">        // 保存学生</div><div class="line">        String sql = &quot;insert into student(name,age) values(?, ?)&quot;;</div><div class="line">        jdbcTemplate.update(sql, new Object[]&#123;student.getName(), student.getAge()&#125;);</div><div class="line">    &#125;</div><div class="line">    public JdbcTemplate getJdbcTemplate() &#123;</div><div class="line">        return jdbcTemplate;</div><div class="line">    &#125;</div><div class="line">    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) &#123;</div><div class="line">        this.jdbcTemplate = jdbcTemplate;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从上述的代码可知，Spring Jdbc Template简化了部分原生JDBC的操作</p>
+<h1 id="Spring-Data操作数据库"><a href="#Spring-Data操作数据库" class="headerlink" title="Spring Data操作数据库"></a>Spring Data操作数据库</h1><p>使用Spring Data可以大大简化了操作数据的过程<br>Repository接口是Spring Data的核心接口，不提供任何方法，属于标志型接口<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public interface Repository&lt;T, ID extends Serializable&gt; &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们自定义的Repository接口需要继承Repository接口或Repository的子接口或在自定义的Repository接口上@RepositoryDefinition注解<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public interface EmployeeRepository extends Repository&lt;Employee, Integer&gt; &#123;</div><div class="line">｝</div></pre></td></tr></table></figure></p>
+<p><strong>Repository的子接口</strong></p>
+<ul>
+<li>CrudRepository:继承了Repository, 实现了CRUD相关操作的方法</li>
+<li>PageingAndSortingRepository:继承了CurdRepository,实现了分页排序相关的方法</li>
+<li>JpaRepository:继承PagingAndSortingRepository,实现了JPA规范相关的方法</li>
+</ul>
+<p>使用Spring Data 需要在Maven工程中声明相关依赖：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">      &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</div><div class="line">      &lt;version&gt;4.3.5.RELEASE&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">    &lt;!--spring data jpa--&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">      &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</div><div class="line">      &lt;artifactId&gt;spring-data-jpa&lt;/artifactId&gt;</div><div class="line">      &lt;version&gt;1.8.0.RELEASE&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">    &lt;dependency&gt;</div><div class="line">      &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</div><div class="line">      &lt;artifactId&gt;hibernate-entitymanager&lt;/artifactId&gt;</div><div class="line">      &lt;version&gt;4.3.6.Final&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
+<p>Spring的配置文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line"></div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</div><div class="line">       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;</div><div class="line">       xmlns:jpa=&quot;http://www.springframework.org/schema/data/jpa&quot;</div><div class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</div><div class="line">		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd</div><div class="line">		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd</div><div class="line">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd&quot;&gt;</div><div class="line"></div><div class="line">    &lt;!--1 配置数据源--&gt;</div><div class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</div><div class="line">        &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;</div><div class="line">        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;</div><div class="line">        &lt;property name=&quot;password&quot; value=&quot;1234&quot;/&gt;</div><div class="line">        &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/spring_data&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">    &lt;!--2 配置EntityManagerFactory--&gt;</div><div class="line">    &lt;bean id=&quot;entityManagerFactory&quot; class=&quot;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&quot;&gt;</div><div class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</div><div class="line">        &lt;property name=&quot;jpaVendorAdapter&quot;&gt;</div><div class="line">            &lt;bean class=&quot;org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter&quot;/&gt;</div><div class="line">        &lt;/property&gt;</div><div class="line">        &lt;property name=&quot;packagesToScan&quot; value=&quot;cc.codingape&quot;/&gt;</div><div class="line">        &lt;!--通过设置jpa属性，可以利用实体生成表--&gt;</div><div class="line">        &lt;property name=&quot;jpaProperties&quot;&gt;</div><div class="line">            &lt;props&gt;</div><div class="line">                &lt;prop key=&quot;hibernate.ejb.naming_strategy&quot;&gt;org.hibernate.cfg.ImprovedNamingStrategy&lt;/prop&gt;</div><div class="line">                &lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/prop&gt;</div><div class="line">                &lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt;</div><div class="line">                &lt;prop key=&quot;hibernate.format_sql&quot;&gt;true&lt;/prop&gt;</div><div class="line">                &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;</div><div class="line">            &lt;/props&gt;</div><div class="line">        &lt;/property&gt;</div><div class="line"></div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">    &lt;!--3 配置事务管理器--&gt;</div><div class="line">    &lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.orm.jpa.JpaTransactionManager&quot;&gt;</div><div class="line">        &lt;property name=&quot;entityManagerFactory&quot; ref=&quot;entityManagerFactory&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">    &lt;!--4 配置支持注解的事务--&gt;</div><div class="line">    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--5 配置spring data--&gt;</div><div class="line">    &lt;jpa:repositories base-package=&quot;cc.codingape&quot; entity-manager-factory-ref=&quot;entityManagerFactory&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;context:component-scan base-package=&quot;cc.codingape&quot;/&gt;</div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p>
+<p>相关实体类：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by TONY on 2017/8/11.</div><div class="line"> * 雇员：开发实体类 ---》 自动生成数据表</div><div class="line"> */</div><div class="line">@Entity</div><div class="line">@Table(name = &quot;test_employee&quot;)  // 自定义表名</div><div class="line">public class Employee &#123;</div><div class="line"></div><div class="line">    private Integer id;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private Integer age;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 定义ID为主键和自增长</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @GeneratedValue</div><div class="line">    @Id</div><div class="line">    public Integer getId() &#123;</div><div class="line">        return id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setId(Integer id) &#123;</div><div class="line">        this.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 定义name在表中的长度为20</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Column(length = 20)</div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setName(String name) &#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public Integer getAge() &#123;</div><div class="line">        return age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setAge(Integer age) &#123;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public String toString() &#123;</div><div class="line">        return &quot;Employee&#123;&quot; +</div><div class="line">                &quot;id=&quot; + id +</div><div class="line">                &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +</div><div class="line">                &quot;, age=&quot; + age +</div><div class="line">                &apos;&#125;&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>自定义的Repository接口：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public interface EmployeeRepository extends Repository&lt;Employee, Integer&gt; &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 根据约定的规则起方法名，不能乱写，否则会报错</div><div class="line">     * @param name</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    public Employee findByName(String name);</div><div class="line"></div><div class="line">   /**</div><div class="line">    * 这些查询方法的命名都是要按照一定规则的，缺点：麻烦，复杂sql语句难书写</div><div class="line">    * **/</div><div class="line"></div><div class="line">    //where name like ?% and age &lt; ?</div><div class="line">    public List&lt;Employee&gt; findByNameStartingWithAndAgeLessThan(String name, Integer age);</div><div class="line"></div><div class="line">    //where name like %? and age &lt; ?</div><div class="line">    public List&lt;Employee&gt; findByNameEndingWithAndAgeLessThan(String name, Integer age);</div><div class="line"></div><div class="line">    //where name in (?,?....) or age &lt; ?</div><div class="line">    public List&lt;Employee&gt; findByNameInOrAgeLessThan(List&lt;String&gt; nameList, Integer age);</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 使用@Query注解，使用自定义的sql语句</div><div class="line">     * 这种查询语句不是原生的，Employee表示的是类，不是表名,查询的内容若是全部查询，则使用类的别名例如：emp</div><div class="line">     * **/</div><div class="line">    @Query(&quot;select emp from Employee emp where id=(select max(id) from Employee)&quot;)</div><div class="line">    public Employee getEmployeeByMaxId();</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 索引形式的参数传递方式,?1表示方法中的第一个参数，</div><div class="line">     * @param name</div><div class="line">     * @param age</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Query(&quot;select emp from Employee emp where emp.name=?1 and emp.age=?2&quot;)</div><div class="line">    public List&lt;Employee&gt; getEmployeeByNameAndAge(String name, Integer age);</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 参数形式的菜单传递方式</div><div class="line">     * @param name</div><div class="line">     * @param age</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Query(&quot;select emp from Employee emp where emp.name=:name and emp.age=:age&quot;)</div><div class="line">    public List&lt;Employee&gt; getParams2(@Param(&quot;name&quot;) String name, @Param(&quot;age&quot;) Integer age);</div><div class="line"></div><div class="line"></div><div class="line">    @Query(&quot;select emp from Employee emp where emp.name like %?1%&quot;)</div><div class="line">    public List&lt;Employee&gt; queryLike1(String name);</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 参数传值方式,like的查询方式有些麻烦</div><div class="line">     * @param name</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Query(&quot;select emp from Employee  emp where emp.name like %:name%&quot;)</div><div class="line">    public List&lt;Employee&gt; queryLike2(@Param(&quot;name&quot;) String name);</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 原始的查询方式，有局限性</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Query(nativeQuery = true, value = &quot;select count(1) from employee&quot;)</div><div class="line">    public long getCount();</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 开启注解的查询语句，事务的操作需要在service层</div><div class="line">     * @param age</div><div class="line">     * @param name</div><div class="line">     */</div><div class="line">    @Modifying</div><div class="line">    @Query(&quot;update Employee emp set emp.age=:age where emp.name=:name&quot;)</div><div class="line">    public void updateEmployeeAge(@Param(&quot;age&quot;) Integer age, @Param(&quot;name&quot;) String name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>相关测试类：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class EmpolyeeRepositoryTest &#123;</div><div class="line"></div><div class="line">    private ApplicationContext ctx = null;</div><div class="line">    private EmployeeRepository employeeRepository = null;</div><div class="line"></div><div class="line">    // 执行Test方法前自动执行初始化方法</div><div class="line">    @Before</div><div class="line">    public void init() &#123;</div><div class="line">        ctx = new ClassPathXmlApplicationContext(&quot;beans-new.xml&quot;);</div><div class="line">        employeeRepository = ctx.getBean(EmployeeRepository.class);</div><div class="line">        System.out.println(&quot;init&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //执行完Test方法后执行的销毁方法</div><div class="line">    @After</div><div class="line">    public void destory() &#123;</div><div class="line">        ctx = null;</div><div class="line">        System.out.println(&quot;destory&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testFindByName()&#123;</div><div class="line">        Employee employee = employeeRepository.findByName(&quot;Tony&quot;);</div><div class="line">        System.out.println(employee.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testFindByNameStartingWithAndAgeLessThan()&#123;</div><div class="line">        List&lt;Employee&gt; employeeList = new ArrayList&lt;&gt;();</div><div class="line">        employeeList = employeeRepository.findByNameStartingWithAndAgeLessThan(&quot;test&quot;, 22);</div><div class="line">        for (Employee employee : employeeList) &#123;</div><div class="line">            System.out.println(employee.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testGetEmployeeByMaxId() &#123;</div><div class="line">        Employee employee = employeeRepository.getEmployeeByMaxId();</div><div class="line">        System.out.println(employee.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testGetEmployeeByNameAndAge() &#123;</div><div class="line">        List&lt;Employee&gt; employeeList = new ArrayList&lt;&gt;();</div><div class="line">        employeeList = employeeRepository.getEmployeeByNameAndAge(&quot;Tony&quot;, 22);</div><div class="line">        for (Employee employee : employeeList) &#123;</div><div class="line">            System.out.println(employee.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testGetParams2() &#123;</div><div class="line">        List&lt;Employee&gt; employeeList = new ArrayList&lt;&gt;();</div><div class="line">        employeeList = employeeRepository.getParams2(&quot;Tony&quot;, 22);</div><div class="line">        for (Employee employee : employeeList) &#123;</div><div class="line">            System.out.println(employee.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testQueryLike1() &#123;</div><div class="line">        List&lt;Employee&gt; employeeList = new ArrayList&lt;&gt;();</div><div class="line">        employeeList = employeeRepository.queryLike2(&quot;test&quot;);</div><div class="line">        for (Employee employee : employeeList) &#123;</div><div class="line">            System.out.println(employee.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testGetCount() &#123;</div><div class="line">        System.out.println(employeeRepository.getCount());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在Sping Data中使用自定义自己的接口设置接口方法时有两种方法：</p>
+<ol>
+<li><p>对于按照方法命名规则来使用的话，有弊端：</p>
+<ul>
+<li>方法名会比较长： 约定大于配置</li>
+<li><p>对于一些复杂的查询，是很难实现</p>
+<p><img src="https://static.oschina.net/uploads/img/201708/14221413_nG0n.png" alt="输入图片说明" title="在这里输入图片标题"><br><img src="https://static.oschina.net/uploads/img/201708/14221444_eZan.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+</li>
+</ul>
+</li>
+<li><p>@Query注解</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Query(&quot;select emp from Employee  emp where emp.name like %:name%&quot;)</div><div class="line">    public List&lt;Employee&gt; queryLike2(@Param(&quot;name&quot;) String name);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>sql语句中form后面跟的是要查询的实体类而不是表名称</p>
+<p><strong>在Spring Data中使用事务：</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Modifying</div><div class="line">@Query(&quot;update Employee emp set emp.age=:age where emp.name=:name&quot;)</div><div class="line">public void updateEmployeeAge(@Param(&quot;age&quot;) Integer age, @Param(&quot;name&quot;) String name);</div></pre></td></tr></table></figure></p>
+<p>只需在@Query上声明@Modifying注解，事务需要在Service层的相应方法声明@Transactional注解（需要在spring的配置文件中声明开启了注解）</p>
+<h2 id="CrudRepository接口讲解"><a href="#CrudRepository接口讲解" class="headerlink" title="CrudRepository接口讲解"></a>CrudRepository接口讲解</h2><p><img src="https://static.oschina.net/uploads/img/201708/14223139_0pjH.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<h2 id="PagingAndSortingRespository接口讲解"><a href="#PagingAndSortingRespository接口讲解" class="headerlink" title="PagingAndSortingRespository接口讲解"></a>PagingAndSortingRespository接口讲解</h2><p><img src="https://static.oschina.net/uploads/img/201708/14223157_XiVz.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class EmployeePagingAndSortingRespositoryTest &#123;</div><div class="line">    private ApplicationContext ctx = null;</div><div class="line">    private EmployeePagingAndSortingRepository employeePagingAndSortingRespository = null;</div><div class="line"></div><div class="line">    @Before</div><div class="line">    public void init() &#123;</div><div class="line">        ctx = new ClassPathXmlApplicationContext(&quot;beans-new.xml&quot;);</div><div class="line">        employeePagingAndSortingRespository = ctx.getBean(EmployeePagingAndSortingRepository.class);</div><div class="line">        System.out.println(&quot;init&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @After</div><div class="line">    public void destory() &#123;</div><div class="line">        ctx = null;</div><div class="line">        System.out.println(&quot;destory&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testPage() &#123;</div><div class="line">        //index是从0开始</div><div class="line">        Pageable pageable = new PageRequest(0, 10);</div><div class="line">        Page&lt;Employee&gt; page = employeePagingAndSortingRespository.findAll(pageable);</div><div class="line">        System.out.println(&quot;查询的总的记录数&quot; + page.getTotalElements());</div><div class="line">        System.out.println(&quot;当前第几页&quot; + page.getNumber());</div><div class="line">        System.out.println(&quot;查询的当前页面的集合&quot; + page.getContent());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Test</div><div class="line">    public void testPageAndSort() &#123;</div><div class="line">        Sort.Order order = new Sort.Order(Sort.Direction.DESC, &quot;id&quot;);</div><div class="line">        Sort sort = new Sort(order);</div><div class="line">        //index是从0开始</div><div class="line">        Pageable pageable = new PageRequest(0, 10, sort);</div><div class="line">        Page&lt;Employee&gt; page = employeePagingAndSortingRespository.findAll(pageable);</div><div class="line">        System.out.println(&quot;查询的总的记录数&quot; + page.getTotalElements());</div><div class="line">        System.out.println(&quot;当前第几页&quot; + page.getNumber());</div><div class="line">        System.out.println(&quot;查询的当前页面的集合&quot; + page.getContent());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="JpaRepository接口讲解"><a href="#JpaRepository接口讲解" class="headerlink" title="JpaRepository接口讲解"></a>JpaRepository接口讲解</h2><p><img src="https://static.oschina.net/uploads/img/201708/14223208_UMUl.png" alt="![输入图片说明](https://static.oschina.net/uploads/img/201708/14223208_UMUl.png &quot;在这里输入图片标题&quot;)" title="在这里输入图片标题"></p>
+<h2 id="JpaSpecificationExecutor接口讲解"><a href="#JpaSpecificationExecutor接口讲解" class="headerlink" title="JpaSpecificationExecutor接口讲解"></a>JpaSpecificationExecutor接口讲解</h2><p>JpaSpecificationExecutor接口封装了JPA Criterial查询条件，在PagingAndSortingRespository接口中虽然可以进行排序等操作，但不能带查询条件。因此引入了JpaSpecificationExecutor接口<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class EmployeeSpecificationRepositoryTest &#123;</div><div class="line">    private ApplicationContext ctx = null;</div><div class="line">    private EmployeeJpaSpecificationExecutorRepository employeeJpaSpecificationExecutorRepository = null;</div><div class="line"></div><div class="line">    @Before</div><div class="line">    public void init() &#123;</div><div class="line">        ctx = new ClassPathXmlApplicationContext(&quot;beans-new.xml&quot;);</div><div class="line">        employeeJpaSpecificationExecutorRepository = ctx.getBean(EmployeeJpaSpecificationExecutorRepository.class);</div><div class="line">        System.out.println(&quot;init&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @After</div><div class="line">    public void destory() &#123;</div><div class="line">        ctx = null;</div><div class="line">        System.out.println(&quot;destory&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 1.分页</div><div class="line">     * 2.排序</div><div class="line">     * 3.查询条件 age &gt; 50</div><div class="line">     */</div><div class="line">    @Test</div><div class="line">    public void testQuery() &#123;</div><div class="line"></div><div class="line">        Sort.Order order = new Sort.Order(Sort.Direction.DESC, &quot;id&quot;);</div><div class="line">        Sort sort = new Sort(order);</div><div class="line">        //index是从0开始</div><div class="line">        Pageable pageable = new PageRequest(0, 10, sort);</div><div class="line"></div><div class="line">        /**</div><div class="line">         * root:就是我们要查询的类型</div><div class="line">         * query:添加查询条件</div><div class="line">         * cb:构建Predicate</div><div class="line">         */</div><div class="line">        Specification&lt;Employee&gt; specification = new Specification&lt;Employee&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public Predicate toPredicate(Root&lt;Employee&gt; root, CriteriaQuery&lt;?&gt; criteriaQuery, CriteriaBuilder criteriaBuilder) &#123;</div><div class="line">                // root (employee (age))</div><div class="line">                Path path = root.get(&quot;age&quot;);</div><div class="line">                return criteriaBuilder.gt(path, 50);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        //根据排序条件返回的page</div><div class="line">        Page&lt;Employee&gt; page = employeeJpaSpecificationExecutorRepository.findAll(specification, pageable);</div><div class="line">        System.out.println(&quot;查询的总的记录数&quot; + page.getTotalElements());</div><div class="line">        System.out.println(&quot;当前第几页&quot; + page.getNumber());</div><div class="line">        System.out.println(&quot;查询的当前页面的集合&quot; + page.getContent());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/16/Java多线程（一）/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avater.png"
+               alt="Tony" />
+          <p class="site-author-name" itemprop="name">Tony</p>
+           
+              <p class="site-description motion-element" itemprop="description">学习技术，分享技术...</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zitongchen" rel="external nofollow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统的JDBC操作数据库"><span class="nav-number">1.</span> <span class="nav-text">传统的JDBC操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-JDBC操作数据库"><span class="nav-number">2.</span> <span class="nav-text">Spring JDBC操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Data操作数据库"><span class="nav-number">3.</span> <span class="nav-text">Spring Data操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CrudRepository接口讲解"><span class="nav-number">3.1.</span> <span class="nav-text">CrudRepository接口讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PagingAndSortingRespository接口讲解"><span class="nav-number">3.2.</span> <span class="nav-text">PagingAndSortingRespository接口讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JpaRepository接口讲解"><span class="nav-number">3.3.</span> <span class="nav-text">JpaRepository接口讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JpaSpecificationExecutor接口讲解"><span class="nav-number">3.4.</span> <span class="nav-text">JpaSpecificationExecutor接口讲解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130825"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("4wyUmphSKE5wrQGHEh5Js0bk-gzGzoHsz", "oTOHrhMuED5U0oqV2KrRMGF0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+</body>
+</html>
