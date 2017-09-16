@@ -663,7 +663,7 @@ Maven的主要目的是为开发者提供
 网络攻击技术(一)–SQL Injection
 网络攻击技术(二)–Cross-site scripting
 xss的wiki解释：
-123456跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它
+跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -820,7 +820,7 @@ xss的wiki解释：
       
         
           
-          文件的写入1234567891011121314151617181920lists = ['one','two','three','four']with open('message.txt','w') as file:    for item in lists:        file.write(item + ' ')# 结果是 one two three four (没有问题)for i in
+          文件的写入lists = ['one','two','three','four']with open('message.txt','w') as file:    for item in lists:        file.write(item + ' ')# 结果是 one two three four (没有问题)for i in range(4):    with open('messag
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -978,7 +978,7 @@ xss的wiki解释：
         
           
           什么是Sql注入攻击wiki给出的解释为：
-12345SQL攻击（英语：SQL injection），简称注入攻击，是发生于应用程序之数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了检查，那么这些注入进去的指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。有部分人认为SQL注入攻击是只针对Microsoft SQL Server
+SQL攻击（英语：SQL injection），简称注入攻击，是发生于应用程序之数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了检查，那么这些注入进去的指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。有部分人认为SQL注入攻击是只针对Microsoft SQL Server而来，但只
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1632,7 +1632,7 @@ sys.getrefcount()函数可以获
 主从复制可以备份数据，数据恢复和读写分离
 实战在实际应用中我们需要部署很多台服务器，但我们要在单机上面测试，所以我们把mongodb文件夹复制放到其他的盘符或者目录下，模拟放在多台服务器上。
 启动其中一个MongoDB,把该数据库指定为主数据库,其中不指定端口默认为27017
-1&gt;m
+&gt;mo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1790,7 +1790,7 @@ sys.getrefcount()函数可以获
         
           
           备份备份的语法
-1&gt;mongodump -h dbhost -d dbname -o dbdirectory
+&gt;mongodump -h dbhost -d dbname -o dbdirectory
 
 -h:数据库服务器的地址，可以指定端口号
 
@@ -1801,6 +1801,7 @@ sys.getrefcount()函数可以获
 
 mongodump –host xxxx –port xxxx   备份所以数据
 mongodump –collectoin xxxx –db xxxx 备份指定的数据库集合
+
 
 
           ...

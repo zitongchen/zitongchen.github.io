@@ -95,10 +95,10 @@
 
 手动设置MongoDB的环境
 开始设置一个 目录来保存数据，如果使用默认路径，在命令行输入：
-1md c:\data\db
+md c:\data\db
 也可以自定义一个保存路径:
-12#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
-为mongod.exe 指定数据保存的">
+#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
+为mongod.exe 指定数据保存的目录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Win10安装MongoDB">
 <meta property="og:url" content="https://zitongchen.github.io/2017/03/16/在Win10安装MongoDB/index.html">
@@ -107,10 +107,10 @@
 
 手动设置MongoDB的环境
 开始设置一个 目录来保存数据，如果使用默认路径，在命令行输入：
-1md c:\data\db
+md c:\data\db
 也可以自定义一个保存路径:
-12#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
-为mongod.exe 指定数据保存的">
+#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
+为mongod.exe 指定数据保存的目录">
 <meta property="og:image" content="http://omw3zv1ei.bkt.clouddn.com/mongodb_1.png">
 <meta property="og:image" content="http://omw3zv1ei.bkt.clouddn.com/mongodb_2.png">
 <meta property="og:image" content="http://omw3zv1ei.bkt.clouddn.com/mongodb_3.png">
@@ -121,10 +121,10 @@
 
 手动设置MongoDB的环境
 开始设置一个 目录来保存数据，如果使用默认路径，在命令行输入：
-1md c:\data\db
+md c:\data\db
 也可以自定义一个保存路径:
-12#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
-为mongod.exe 指定数据保存的">
+#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹E:\workspace\MongoDB\data\db
+为mongod.exe 指定数据保存的目录">
 <meta name="twitter:image" content="http://omw3zv1ei.bkt.clouddn.com/mongodb_1.png">
 
 
@@ -408,30 +408,30 @@
 </li>
 <li><p>手动设置MongoDB的环境</p>
 <p>开始设置一个 目录来保存数据，如果使用默认路径，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">md c:\data\db</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">md c:\data\db</div></pre></td></tr></table></figure>
 <p>也可以自定义一个保存路径:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹</div><div class="line">E:\workspace\MongoDB\data\db</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#保存到文件夹下面，喜欢保存到那里就到那里创建一个文件夹</div><div class="line">E:\workspace\MongoDB\data\db</div></pre></td></tr></table></figure>
 <p>为mongod.exe 指定数据保存的目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#在cmd窗口cd 到 MongoDB程序的bin目录下，并执行下面的命令</div><div class="line">mongod.exe --dbpath E:\workspace\MongoDB\data\db</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#在cmd窗口cd 到 MongoDB程序的bin目录下，并执行下面的命令</div><div class="line">mongod.exe --dbpath E:\workspace\MongoDB\data\db</div></pre></td></tr></table></figure>
 <p><img src="http://omw3zv1ei.bkt.clouddn.com/mongodb_1.png" alt=""></p>
 <p>出现红框内容表示启动成功了</p>
 </li>
 <li><p>连接MongoDB</p>
 <p>不要关闭上一步命令产生的命令窗口，并从新打开一个命令窗口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">##在cmd窗口cd 到 MongoDB程序的bin目录下，并执行下面的命令</div><div class="line">mongo.exe</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">##在cmd窗口cd 到 MongoDB程序的bin目录下，并执行下面的命令</div><div class="line">mongo.exe</div></pre></td></tr></table></figure>
 <p><img src="http://omw3zv1ei.bkt.clouddn.com/mongodb_2.png" alt=""></p>
 <p>出现<code>&gt;</code>表示启动连接成功</p>
 </li>
 <li><p>为windows系统配置MongoDB 让mongoDB成为计算机的服务</p>
 <p>在<code>E:\workspace\MongoDB\conf</code>下创建<code>mongod.cfg</code>配置文件（配置文件中不要使用tag键，使用4个空白来进行缩进）,在<code>E:\workspace\MongoDB\logs</code>下创建<code>mongodb.log</code>日记文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">systemLog:</div><div class="line">    destination: file</div><div class="line">    path: E:\workspace\MongoDB\logs\mongodb.log  #日记文件的路径</div><div class="line">storage:</div><div class="line">    dbPath: E:\workspace\MongoDB\data\db  #数据库文件保存路径</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">systemLog:</div><div class="line">    destination: file</div><div class="line">    path: E:\workspace\MongoDB\logs\mongodb.log  #日记文件的路径</div><div class="line">storage:</div><div class="line">    dbPath: E:\workspace\MongoDB\data\db  #数据库文件保存路径</div></pre></td></tr></table></figure>
 </li>
 <li><p>安装MongoDB服务 （安装路径是文件路径）</p>
 <p>以管理员权限打开命令行（win10在开始菜单查找到<code>Window系统</code>，选择<code>命令提示符</code>，右击选择<code>以管理员身份运行</code>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;E:\Program Files (x86)\MongoDB\bin\mongod.exe&quot; --config</div><div class="line">&quot;E:\workspace\MongoDB\conf\mongod.cfg&quot; --install</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&quot;E:\Program Files (x86)\MongoDB\bin\mongod.exe&quot; --config</div><div class="line">&quot;E:\workspace\MongoDB\conf\mongod.cfg&quot; --install</div></pre></td></tr></table></figure>
 <p><img src="http://omw3zv1ei.bkt.clouddn.com/mongodb_3.png" alt=""></p>
 <p>启动MongoDB服务，命令行输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net start MongoDB</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">net start MongoDB</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
